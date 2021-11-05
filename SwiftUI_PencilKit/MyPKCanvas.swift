@@ -14,7 +14,7 @@ struct MyPKCanvas: UIViewRepresentable {
   let picker = PKToolPicker.init()
   
   func makeUIView(context: Context) -> PKCanvasView {
-    canvasView.drawingPolicy = .anyInput
+    canvasView.drawingPolicy = .default // iPad 可由 toolpicker 的選項去設定 (Draw with Finger)
     self.canvasView.tool = PKInkingTool(.pen, color: .red, width: 15)
     self.canvasView.becomeFirstResponder()
     return canvasView
